@@ -67,6 +67,10 @@ For the complete list of command line arguments:
 
     $ bulldog -h
 
+### Systemd init start-stop script
+
+[Instruction here](https://github.com/pioz/bulldog/wiki/Systemd-script-on-Debian).
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/pioz/bulldog.
