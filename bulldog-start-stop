@@ -1,0 +1,46 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          bulldog
+# Required-Start:    $remote_fs $syslog $network
+# Required-Stop:     $remote_fs $syslog $network
+# Should-Start:      
+# Should-Stop:       
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Check if a website is reachable
+# Description:       Bulldog is an amazing hunting dog that checks for you a list of URLs and warns you by email if one of them returns a http code that is not 200.
+### END INIT INFO
+
+NAME=bulldog
+DAEMON=/usr/bin/$NAME
+CONFIG=/etc/$NAME
+PIDFILE=/var/run/$NAME.pid
+
+test -x $DAEMON || exit 0
+
+set -e
+
+case "$1" in
+  start)
+        echo -n "Starting $NAME"
+        start-stop-daemon --start --quiet --background --make-pidfile --pidfile $PIDFILE --exec $DAEMON -- -config $CONFIG
+        echo "."
+        ;;
+  stop)
+	echo -n "Stopping $NAME"
+	start-stop-daemon --stop --quiet --pidfile $PIDFILE
+        echo "."
+        ;;
+
+  restart)
+        /etc/init.d/$NAME stop
+        sleep 1
+        /etc/init.d/$NAME start
+        ;;
+  *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 2
+        ;;
+esac
+
+exit 0
