@@ -77,4 +77,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/pioz/b
 
 ## License
 
-The package is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The package is available as open source under the terms of the [GPL License](https://github.com/pioz/bulldog/blob/master/LICENSE).
