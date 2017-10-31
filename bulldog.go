@@ -68,7 +68,7 @@ func configure(config *Config) {
 	iniflags.Parse()
 
 	if *version {
-		fmt.Println("0.1.0")
+		fmt.Println("0.2.0")
 		os.Exit(2)
 	}
 

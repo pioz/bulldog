@@ -1,4 +1,8 @@
-bulldog (0.1.0-1) unstable; urgency=medium
+bulldog (0.2.0-1) unstable; urgency=medium
+
+  * Send one email with a report of all errors
+
+  * Fix conf bugs
 
   * Initial release (Closes: #2432)
 

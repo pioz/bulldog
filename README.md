@@ -13,10 +13,10 @@ Install it yourself
     $ ./bulldog -v
 
 or
-[⬇️ download](https://github.com/pioz/bulldog/blob/master/deb/bulldog_0.1.0-1_amd64.deb?raw=true)
+[⬇️ download](https://github.com/pioz/bulldog/blob/master/deb/bulldog_0.2.0-1_amd64.deb?raw=true)
 and install the `.deb` package with
 
-    $ dpkg -i bulldog_0.1.0-1_amd64.deb
+    $ dpkg -i bulldog_0.2.0-1_amd64.deb
 
 ## Usage
 
