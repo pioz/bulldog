@@ -31,3 +31,6 @@ dpkg-buildpackage -us -uc
 cd ..
 debc ${NAME}_$VERSION-1_$ARCH.changes
 lintian ${NAME}_$VERSION-1_$ARCH.deb
+
+rm -rf ${NAME}-$VERSION
+rm ${NAME}_$VERSION-1.debian.tar.xz ${NAME}_$VERSION-1.dsc ${NAME}_$VERSION-1_amd64.buildinfo ${NAME}_$VERSION-1_amd64.changes ${NAME}_$VERSION.orig.tar.xz
