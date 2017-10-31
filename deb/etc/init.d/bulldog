@@ -18,42 +18,37 @@ DAEMON=/usr/bin/$NAME
 CONFIG=/etc/$NAME
 PIDFILE=/var/run/$NAME.pid
 
-test -x $DAEMON || exit 5
-
-set -e
-
 case "$1" in
   start)
-	log_daemon_msg "Starting" "$NAME"
-        if start-stop-daemon --start --quiet --background --make-pidfile --pidfile $PIDFILE --exec $DAEMON -- -config $CONFIG ; then
-#	if [ $? -eq 0 ]; then
-	        log_end_msg 0
-	else
-		log_end_msg 1
-	fi
-        ;;
+    log_daemon_msg "Starting" "$NAME"
+    if start-stop-daemon --start --quiet --background --make-pidfile --pidfile $PIDFILE --exec $DAEMON -- -config $CONFIG ; then
+      log_end_msg 0
+    else
+      log_end_msg 1
+    fi
+    ;;
   stop)
-	log_daemon_msg "Stopping" "$NAME"
-	if start-stop-daemon --stop --quiet --pidfile $PIDFILE ; then
-	        log_end_msg 0
-	else
-                log_end_msg 1
-	fi
-        ;;
+    log_daemon_msg "Stopping" "$NAME"
+    if start-stop-daemon --stop --quiet --pidfile $PIDFILE ; then
+      log_end_msg 0
+    else
+      log_end_msg 1
+    fi
+    ;;
   restart|force-reload)
-        log_daemon_msg "Restarting" "$NAME"
-	start-stop-daemon --stop --quiet --oknodo --pidfile $PIDFILE &> /dev/null
-	sleep 1
-	if start-stop-daemon --start --quiet --background --make-pidfile --pidfile $PIDFILE --exec $DAEMON -- -config $CONFIG ; then
-	        log_end_msg 0
-        else
-                log_end_msg 1
-        fi
-        ;;
+    log_daemon_msg "Restarting" "$NAME"
+    start-stop-daemon --stop --quiet --oknodo --pidfile $PIDFILE &> /dev/null
+    sleep 1
+    if start-stop-daemon --start --quiet --background --make-pidfile --pidfile $PIDFILE --exec $DAEMON -- -config $CONFIG ; then
+      log_end_msg 0
+    else
+      log_end_msg 1
+    fi
+    ;;
   *)
-        echo "Usage: $0 {start|stop|restart}"
-        exit 2
-        ;;
+    echo "Usage: $0 {start|stop|restart}"
+    exit 2
+    ;;
 esac
 
 exit 0
