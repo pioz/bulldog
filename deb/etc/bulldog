@@ -1,0 +1,27 @@
+[time]
+# After checking the entire list of URLs sleep for these seconds.
+s=60
+# After checking the entire list of URLs and at least a check fail sleep for
+# these seconds. Usually this time is greater to not warn you continuously.
+se=600
+# Http request timeout. If the timeout is reached the check is to be considered
+# as failed.
+t=10
+[logging]
+# Log file path. If empty logs on stdout.
+logfile=/var/log/bulldog.log
+# Disables logs.
+quiet=false
+[email]
+# Gmail account. If this is present send email using the gmail smtp server. Use
+# -pass flag to specify the gmail account password. If this flag is empty send
+# email using `mail` command line program.
+#gmail=
+# Gmail account password. Only relevant when using -gmail flag.
+#pass=
+# When a check fails send an email on this email address. If is empty the email
+# alert is disabled.
+#to=
+[urls]
+# Comma-separated list of URLs to check.
+#urls=http://google.com,http://twitter.com/
