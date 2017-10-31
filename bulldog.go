@@ -8,9 +8,8 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"net/smtp"
+	"net/url"
 	"os"
-	"os/exec"
 	"strings"
 	"time"
 
@@ -98,102 +97,53 @@ func configure(config *Config) {
 	}
 }
 
-func check(client *http.Client, url string) error {
-	resp, err := client.Get(url)
+func check(client *http.Client, u string) error {
+	resp, err := client.Get(u)
 	if err != nil || resp.StatusCode != 200 {
 		var checkError error
 		if err != nil {
 			checkError = err
 		} else {
-			checkError = fmt.Errorf("status code is %d", resp.StatusCode)
+			checkError = &url.Error{Op: "Get", URL: u, Err: fmt.Errorf("status code is %d", resp.StatusCode)}
 		}
 		return checkError
 	}
 	return nil
 }
 
-func sendEmailWithGmail(from, pass, to, body, url string) error {
-	msg := "From: Bulldog <" + from + ">\n" +
-		"To: " + to + "\n" +
-		"Subject: [Bulldog] " + url + " unreachable\n\n" +
-		body
-
-	err := smtp.SendMail("smtp.gmail.com:587",
-		smtp.PlainAuth("", from, pass, "smtp.gmail.com"),
-		from, []string{to}, []byte(msg))
-
-	if err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func sendEmail(to, body, url string) error {
-	c1 := exec.Command("echo", body)
-	c2 := exec.Command("mail", "-s [Bulldog] "+url+" unreachable", "-r Bulldog <bulldog>", to)
-	c2.Stdin, _ = c1.StdoutPipe()
-	// err1 := c2.Start()
-	// err2 := c1.Run()
-	// c2.Wait()
-	err1 := c1.Start()
-	err2 := c2.Run()
-	err3 := c1.Wait()
-	if err1 != nil {
-		return err1
-	}
-	if err2 != nil {
-		return err2
-	}
-	if err3 != nil {
-		return err3
-	}
-	return nil
-}
-
 func main() {
 	var (
-		config      Config
-		unreachable bool
-		sleep       time.Duration
-		client      = http.Client{Timeout: time.Second * time.Duration(config.timeout)}
+		config Config
+		sleep  time.Duration
+		mailer *Mailer
+		client *http.Client
 	)
 	configure(&config)
 	if len(config.urls) == 0 {
 		log.Println("Nothing to check. Exiting...")
 		return
 	}
-
+	client = &http.Client{Timeout: time.Second * time.Duration(config.timeout)}
+	mailer = &Mailer{gmail: config.gmail, pass: config.pass, to: config.to}
 	log.Printf("Starting to check these urls => %v...\n", config.urls)
 	for {
-		unreachable = false
+		unreachable := make([]error, 0)
 		for _, url := range config.urls {
-			err := check(&client, url)
+			err := check(client, url)
 			if err != nil {
-				unreachable = true
+				unreachable = append(unreachable, err)
 				log.Printf("Error for '%s': %s\n", url, err.Error())
-				if config.to != "" {
-					var smtpErr error
-					if config.gmail != "" {
-						smtpErr = sendEmailWithGmail(config.gmail, config.pass, config.to, err.Error(), url)
-					} else {
-						smtpErr = sendEmail(config.to, err.Error(), url)
-					}
-					if smtpErr != nil {
-						log.Println(smtpErr)
-					}
-				}
 			}
 		}
-		if unreachable {
-			sleep = time.Second * time.Duration(config.sleepWithError)
-		} else {
+		if len(unreachable) == 0 {
 			sleep = time.Second * time.Duration(config.sleep)
+		} else {
+			mailer.BuildAndSendEmail(unreachable)
+			sleep = time.Second * time.Duration(config.sleepWithError)
 		}
 		if config.oneCheck {
 			break
 		}
 		time.Sleep(sleep)
 	}
-
 }
