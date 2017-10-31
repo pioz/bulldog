@@ -1,8 +1,7 @@
 #!/bin/bash
 
 ARCHS="i386 amd64"
-echo $ARCHS | grep "$ARCH" > /dev/null
-if [ $? != 0 ]; then
+if ! echo $ARCHS | grep -w "$ARCH" > /dev/null ; then
   echo "You need to set a valid $ARCH variable (i386|amd64)"
   exit 2
 fi
