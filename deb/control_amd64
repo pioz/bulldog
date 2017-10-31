@@ -1,0 +1,16 @@
+Source: bulldog
+Section: utils
+Priority: optional
+Maintainer: Enrico Pilotto <epilotto@gmx.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.8
+Homepage: https://github.com/pioz/bulldog
+#Vcs-Git: https://anonscm.debian.org/collab-maint/bulldog.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/bulldog.git
+
+Package: bulldog
+Architecture: amd64
+Depends: coreutils (>= 7), bsd-mailx (>= 7), lsb-base (>= 7)
+Description: Check if websites are reachable
+ Bulldog is an amazing hunting dog that checks for you a list of URLs and warns
+ you by email if one of them returns a http code that is not 200.

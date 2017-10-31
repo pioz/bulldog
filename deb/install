@@ -1,0 +1,3 @@
+usr/bin/bulldog /usr/bin
+etc/bulldog /etc
+etc/init.d/bulldog /etc/init.d

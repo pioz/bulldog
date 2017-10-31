@@ -1,0 +1,5 @@
+bulldog (0.1.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #2432)
+
+ -- Enrico Pilotto <epilotto@gmx.com>  Tue, 31 Oct 2017 02:01:53 +0100
