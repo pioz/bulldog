@@ -14,15 +14,15 @@ type Mailer struct {
 }
 
 // BuildAndSendEmail send alert email
-func (m *Mailer) BuildAndSendEmail(unreachable []error) {
+func (m *Mailer) BuildAndSendEmail(errors []error) {
 	if m.to != "" {
 		var (
-			count   = len(unreachable)
+			count   = len(errors)
 			subject string
 			body    string
 		)
 		if count == 1 {
-			urlErr, ok := unreachable[0].(*url.Error)
+			urlErr, ok := errors[0].(*url.Error)
 			if ok {
 				subject = fmt.Sprintf("'%s' is unreachable", urlErr.URL)
 			} else {
@@ -31,7 +31,7 @@ func (m *Mailer) BuildAndSendEmail(unreachable []error) {
 		} else {
 			subject = fmt.Sprintf("%d sites are unreachable", count)
 		}
-		for _, error := range unreachable {
+		for _, error := range errors {
 			body += fmt.Sprintf("* %s\n\n", error.Error())
 		}
 		err := m.SendMail(subject, body)

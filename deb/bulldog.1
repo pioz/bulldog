@@ -1,4 +1,4 @@
-.TH man 1 "31 Oct 2017" "0.2.0" "Bulldog"
+.TH man 1 "31 Oct 2017" "0.2.1" "Bulldog"
 .SH NAME
 Bulldog \- the http checker
 .SH DESCRIPTION
@@ -8,7 +8,7 @@ bulldog [options]
 .SH OPTIONS
 .TP
 .BR \-1
-Perform URLs checks only one time.
+Perform URLs checks only one time then exit with status code 1 if at least one check fails, otherwise exit with code 0.
 .TP
 .BR \-config " " string
 Path to ini config for using in go flags. May be relative to the current executable path.
