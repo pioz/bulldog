@@ -11,6 +11,6 @@ Homepage: https://github.com/pioz/bulldog
 Package: bulldog
 Architecture: amd64
 Depends: coreutils (>= 7), bsd-mailx (>= 7), lsb-base (>= 7)
-Description: Check if websites are reachable
+Description: The http checker
  Bulldog is an amazing hunting dog that checks for you a list of URLs and warns
  you by email if one of them returns a http code that is not 200.

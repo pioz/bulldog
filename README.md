@@ -13,10 +13,10 @@ Install it yourself
     $ ./bulldog -v
 
 or
-[⬇️ download](https://github.com/pioz/bulldog/blob/master/deb/bulldog_0.2.0-1_amd64.deb?raw=true)
+[⬇️ download](https://github.com/pioz/bulldog/blob/master/deb/bulldog_0.2.1-1_amd64.deb?raw=true)
 and install the `.deb` package with
 
-    $ dpkg -i bulldog_0.2.0-1_amd64.deb
+    $ dpkg -i bulldog_0.2.1-1_amd64.deb
 
 ## Usage
 
@@ -65,7 +65,8 @@ You can pass also the config file options as command arguments:
 
     $ bulldog -urls http://google.com -to your@email.com -s 10
 
-To make a check on the list only once and then exit:
+You can also perform a check on the list only once and then exit (status code 1
+if at least one check fails):
 
     $ bulldog -urls http://google.com,http://twitter.com -1
 

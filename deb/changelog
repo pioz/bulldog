@@ -1,4 +1,11 @@
-bulldog (0.2.0-1) unstable; urgency=medium
+bulldog (0.2.1-1) UNRELEASED; urgency=medium
+
+  * If -1 flag is present exit with status code 1 if at least one check fails,
+  otherwise exit with status code 0.
+
+ -- Enrico Pilotto <epilotto@gmx.com>  Wed, 01 Nov 2017 13:59:37 +0100
+
+bulldog (0.2.0-1) UNRELEASED; urgency=medium
 
   * Send one email with a report of all errors
 

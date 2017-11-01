@@ -53,7 +53,7 @@ func configure(config *Config) {
 	flag.IntVar(&config.sleep, "s", 60, "Seconds to sleep between a complete URLs check to another.")
 	flag.IntVar(&config.sleepWithError, "se", 600, "Seconds to sleep between a complete URLs check to another if a check has failed.")
 	flag.IntVar(&config.timeout, "t", 10, "Check request timeout in seconds.")
-	flag.BoolVar(&config.oneCheck, "1", false, "Perform URLs checks only one time.")
+	flag.BoolVar(&config.oneCheck, "1", false, "Perform URLs checks only one time then exit with status code 1 if at least one check fails, otherwise exit with code 0.")
 
 	flag.StringVar(&config.logFile, "logfile", "", "Logfile path.")
 	flag.BoolVar(&config.quiet, "quiet", false, "Disable logging.")
@@ -68,7 +68,7 @@ func configure(config *Config) {
 	iniflags.Parse()
 
 	if *version {
-		fmt.Println("0.2.0")
+		fmt.Println("0.2.1")
 		os.Exit(2)
 	}
 
@@ -113,10 +113,12 @@ func check(client *http.Client, u string) error {
 
 func main() {
 	var (
-		config Config
-		sleep  time.Duration
-		mailer *Mailer
-		client *http.Client
+		config   Config
+		sleep    time.Duration
+		mailer   *Mailer
+		client   *http.Client
+		errors   []error
+		errCount int
 	)
 	configure(&config)
 	if len(config.urls) == 0 {
@@ -127,22 +129,30 @@ func main() {
 	mailer = &Mailer{gmail: config.gmail, pass: config.pass, to: config.to}
 	log.Printf("Starting to check these urls => %v...\n", config.urls)
 	for {
-		unreachable := make([]error, 0)
+		errors = make([]error, 0)
 		for _, url := range config.urls {
 			err := check(client, url)
 			if err != nil {
-				unreachable = append(unreachable, err)
+				errors = append(errors, err)
 				log.Printf("Error for '%s': %s\n", url, err.Error())
 			}
 		}
-		if len(unreachable) == 0 {
+		errCount = len(errors)
+		if errCount == 0 {
 			sleep = time.Second * time.Duration(config.sleep)
 		} else {
-			mailer.BuildAndSendEmail(unreachable)
+			mailer.BuildAndSendEmail(errors)
 			sleep = time.Second * time.Duration(config.sleepWithError)
 		}
 		if config.oneCheck {
-			break
+			// f(x) = [e^(-1/x^2)]
+			//exitStatus := int(math.Ceil(math.Pow(2.7182818284, -1/math.Pow(float64(errCount), 2.0))))
+			//os.Exit(exitStatus)
+			if errCount == 0 {
+				os.Exit(0)
+			} else {
+				os.Exit(1)
+			}
 		}
 		time.Sleep(sleep)
 	}

@@ -1,12 +1,14 @@
-.TH man 1 "31 Oct 2017" "0.2.0" "Bulldog"
+.TH man 1 "31 Oct 2017" "0.2.1" "Bulldog"
 .SH NAME
-Bulldog \- an amazing hunting dog that checks for you a list of URLs and warns you by email if one of them returns a http code that is not 200.
+Bulldog \- the http checker
+.SH DESCRIPTION
+Bulldog is an amazing hunting dog that checks for you a list of URLs and warns you by email if one of them returns a http code that is not 200.
 .SH SYNOPSIS
 bulldog [options]
 .SH OPTIONS
 .TP
 .BR \-1
-Perform URLs checks only one time.
+Perform URLs checks only one time then exit with status code 1 if at least one check fails, otherwise exit with code 0.
 .TP
 .BR \-config " " string
 Path to ini config for using in go flags. May be relative to the current executable path.
