@@ -1,5 +1,7 @@
 # Bulldog
 
+<img src="./bulldog-logo.svg" alt="logo" width="64px" height="64px"/>
+
 __Bulldog__ is an amazing hunting dog that checks for you a list of URLs and
 warns you by email if one of them returns a http code that is not 200.
 
