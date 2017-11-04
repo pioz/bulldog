@@ -2,47 +2,45 @@
 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#A48A7B;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
-	.st1{fill:#CA9E67;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
-	.st2{fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
-	.st3{fill:#EDEDED;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
-	.st4{fill:#CBBBA0;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
-	.st5{fill:#683C11;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
-	.st6{stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
-	.st7{fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
-	.st8{fill:#7B6A58;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
-	.st9{stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
-	.st10{fill:#FFFFFF;}
-</style>
 <g id="XMLID_2_">
-	<path id="XMLID_9_" class="st0" d="M175.9,259.9h157.3l6,206c-78.7,44-163.3,0-163.3,0V259.9z"/>
-	<path id="XMLID_11_" class="st1" d="M433.8,52.6c0,0,53.3-12.7,24,202c0,32,47.4,62.5,40,137.3c-7.3,74.7-79.3,156.7-168.7,82.7
-		c-22.7-11.3-0.7-171.3-0.7-171.3s6-28.7-23.3-33.3c-29.3-4.7-68.9-4.7-98.2,0s-23.3,33.3-23.3,33.3s22,160-0.7,171.3
-		c-89.3,74-161.3-8-168.7-82.7c-7.4-74.9,40-105.3,40-137.3c-29.3-214.7,24-202,24-202s57-35,178.2-35S433.8,52.6,433.8,52.6z"/>
+	<path id="XMLID_9_" style="fill:#A48A7B;stroke:#000000;stroke-width:5;stroke-miterlimit:10;" d="M175.9,259.9h157.3l6,206
+		c-78.7,44-163.3,0-163.3,0L175.9,259.9L175.9,259.9z"/>
+	<path id="XMLID_11_" style="fill:#CA9E67;stroke:#000000;stroke-width:5;stroke-miterlimit:10;" d="M433.8,52.6
+		c0,0,53.3-12.7,24,202c0,32,47.4,62.5,40,137.3c-7.3,74.7-79.3,156.7-168.7,82.7c-22.7-11.3-0.7-171.3-0.7-171.3s6-28.7-23.3-33.3
+		c-29.3-4.7-68.9-4.7-98.2,0s-23.3,33.3-23.3,33.3s22,160-0.7,171.3c-89.3,74-161.3-8-168.7-82.7c-7.4-74.9,40-105.3,40-137.3
+		c-29.3-214.7,24-202,24-202s57-35,178.2-35S433.8,52.6,433.8,52.6z"/>
 	<g id="XMLID_22_">
-		<path id="XMLID_27_" class="st2" d="M457.3,257.9"/>
-		<path id="XMLID_26_" class="st3" d="M373.3,181.9l-23.6,6l-55.1,14c0,0-12,78,33.3,68.7c45.3-9.3,22-79.3,22-79.3L373.3,181.9z"/>
-		<circle id="XMLID_25_" class="st4" cx="324.4" cy="235" r="30.1"/>
+		<path id="XMLID_27_" style="fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;" d="M457.3,257.9"/>
+		<path id="XMLID_26_" style="fill:#EDEDED;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;" d="
+			M373.3,181.9l-23.6,6l-55.1,14c0,0-12,78,33.3,68.7c45.3-9.3,22-79.3,22-79.3L373.3,181.9z"/>
+		
+			<circle id="XMLID_25_" style="fill:#CBBBA0;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;" cx="324.4" cy="235" r="30.1"/>
 	</g>
-	<path id="XMLID_4_" class="st5" d="M143.9,283.6c-53-12.5-89.7-29-89.7-29s-16.7-150.7-2-164.8s132.4-29.2,132.4-29.2
-		s41.3,17,65.3,45s7,152.3,7,152.3l-46,28.7C210.9,286.6,196.9,296.2,143.9,283.6z"/>
-	<path id="XMLID_1_" class="st6" d="M257.2,262.4c0,0,44.7-1.8,44.7,14.8c0,16.6-30,46-44.7,46h-0.3c-14.7,0-44.7-29.4-44.7-46
-		c0-16.6,44.7-14.8,44.7-14.8"/>
-	<path id="XMLID_14_" class="st7" d="M303.9,386.9c0,0-32-32-46-31.3h-1c-14-0.7-46,31.3-46,31.3"/>
-	<line id="XMLID_12_" class="st7" x1="257.6" y1="322.9" x2="256.9" y2="355.6"/>
-	<path id="XMLID_15_" class="st8" d="M21.6,51.3c0,0,78-50.4,160.7-42c38.7,8.3-14.7,150.7-59.7,161C56.6,183.6,21.6,51.3,21.6,51.3
-		z"/>
-	<path id="XMLID_16_" class="st8" d="M489.6,51.3c0,0-78-50.4-160.7-42c-38.7,8.3,14.7,150.7,59.7,161
-		C454.6,183.6,489.6,51.3,489.6,51.3z"/>
+	<path id="XMLID_4_" style="fill:#683C11;stroke:#000000;stroke-width:5;stroke-miterlimit:10;" d="M143.9,283.6
+		c-53-12.5-89.7-29-89.7-29s-16.7-150.7-2-164.8s132.4-29.2,132.4-29.2s41.3,17,65.3,45s7,152.3,7,152.3l-46,28.7
+		C210.9,286.6,196.9,296.2,143.9,283.6z"/>
+	<path id="XMLID_1_" style="stroke:#000000;stroke-width:5;stroke-miterlimit:10;" d="M257.2,262.4c0,0,44.7-1.8,44.7,14.8
+		c0,16.6-30,46-44.7,46h-0.3c-14.7,0-44.7-29.4-44.7-46s44.7-14.8,44.7-14.8"/>
+	<path id="XMLID_14_" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;" d="M303.9,386.9
+		c0,0-32-32-46-31.3h-1c-14-0.7-46,31.3-46,31.3"/>
+	
+		<line id="XMLID_12_" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;" x1="257.6" y1="322.9" x2="256.9" y2="355.6"/>
+	<path id="XMLID_15_" style="fill:#7B6A58;stroke:#000000;stroke-width:5;stroke-miterlimit:10;" d="M21.6,51.3
+		c0,0,78-50.4,160.7-42c38.7,8.3-14.7,150.7-59.7,161C56.6,183.6,21.6,51.3,21.6,51.3z"/>
+	<path id="XMLID_16_" style="fill:#7B6A58;stroke:#000000;stroke-width:5;stroke-miterlimit:10;" d="M489.6,51.3
+		c0,0-78-50.4-160.7-42c-38.7,8.3,14.7,150.7,59.7,161C454.6,183.6,489.6,51.3,489.6,51.3z"/>
 	<g id="XMLID_20_">
-		<path id="XMLID_8_" class="st2" d="M54.2,257.9"/>
-		<path id="XMLID_18_" class="st3" d="M138.2,181.9l23.6,6l55.1,14c0,0,12,78-33.3,68.7c-45.3-9.3-22-79.3-22-79.3L138.2,181.9z"/>
-		<circle id="XMLID_7_" class="st4" cx="187.2" cy="235" r="30.1"/>
-		<circle id="XMLID_17_" class="st9" cx="192.8" cy="242.8" r="19.6"/>
-		<circle id="XMLID_19_" class="st10" cx="184.6" cy="231.2" r="3.8"/>
-		<circle id="XMLID_5_" class="st9" cx="318.8" cy="242.8" r="19.6"/>
-		<circle id="XMLID_6_" class="st10" cx="310.6" cy="231.2" r="3.8"/>
+		<path id="XMLID_8_" style="fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;" d="M54.2,257.9"/>
+		<path id="XMLID_18_" style="fill:#EDEDED;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;" d="
+			M138.2,181.9l23.6,6l55.1,14c0,0,12,78-33.3,68.7c-45.3-9.3-22-79.3-22-79.3L138.2,181.9z"/>
+		
+			<circle id="XMLID_7_" style="fill:#CBBBA0;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;" cx="187.2" cy="235" r="30.1"/>
+		
+			<circle id="XMLID_17_" style="stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;" cx="192.8" cy="242.8" r="19.6"/>
+		<circle id="XMLID_19_" style="fill:#FFFFFF;" cx="184.6" cy="231.2" r="3.8"/>
+		
+			<circle id="XMLID_5_" style="stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;" cx="318.8" cy="242.8" r="19.6"/>
+		<circle id="XMLID_6_" style="fill:#FFFFFF;" cx="310.6" cy="231.2" r="3.8"/>
 	</g>
 </g>
 </svg>
