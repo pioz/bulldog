@@ -7,7 +7,7 @@
 # Should-Stop:       
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Check if a website is reachable
+# Short-Description: The http checker
 # Description:       Bulldog is an amazing hunting dog that checks for you a list of URLs and warns you by email if one of them returns a http code that is not 200.
 ### END INIT INFO
 
